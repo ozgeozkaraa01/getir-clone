@@ -10,14 +10,14 @@ import "slick-carousel/slick/slick-theme.css";
 
 function NextButton({ onClick, className }) {
   return (
-    <button className={`${className} text-purple-700`} onClick={onClick}>
+    <button className={`${className} text-brand-color`} onClick={onClick}>
       <IoIosArrowForward size={22} />
     </button>
   );
 }
 function PrevButton({ onClick, className }) {
   return (
-    <button className={`${className} text-purple-700`} onClick={onClick}>
+    <button className={`${className} text-brand-color`} onClick={onClick}>
       <IoIosArrowBack size={22} />
     </button>
   );
