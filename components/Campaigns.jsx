@@ -58,12 +58,12 @@ const Campaigns = () => {
 
   return (
     <>
-      <div className="sm:container overflow-hidden md:overflow-visible mx-auto px-0">
+      <div className="container mx-auto py-8">
         <Title>Kampanyalar</Title>
         <Slider className="-mx-2 relative" {...settings}>
           {banners &&
             banners.map((banner) => (
-              <div key={banner.id} className="px-2">
+              <div key={banner.id} className="block px-2">
                 <img src={banner.image} className="w-full sm:rounded-lg" />
               </div>
             ))}
