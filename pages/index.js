@@ -6,15 +6,18 @@ import Favorites from "../components/Favorites";
 import MobileApp from "../components/MobileApp";
 import Cards from "../components/Cards";
 import Footer from "../components/Footer";
+import { useWindowWidth } from "@react-hook/window-size";
 
 export default function Home() {
+  const windowWidth = useWindowWidth();
   return (
     <>
       <Header />
+      {windowWidth <= 768 && <Campaigns />}
       <HeroSection />
       <Categories />
-      <Campaigns />
-      <div className="container mx-auto grid gap-y-6">
+      {windowWidth > 768 && <Campaigns />}
+      <div className="container mx-auto grid gap-y-6 pt-8">
         <Favorites />
         <MobileApp />
         <Cards />
