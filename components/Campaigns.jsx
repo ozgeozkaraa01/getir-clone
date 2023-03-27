@@ -34,23 +34,36 @@ const Campaigns = () => {
     dots: false,
     infinite: true,
     speed: 500,
-    slidesToShow: 3,
+    slidesToShow: 4,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 3000,
+    speed: 500,
+    autoplaySpeed: 3500,
+    cssEase: "linear",
+    arrows: true,
     nextArrow: <NextButton />,
     prevArrow: <PrevButton />,
     responsive: [
       {
+        breakpoint: 1280,
+        settings: {
+          slidesToShow: 3,
+          arrows: false,
+        },
+      },
+
+      {
         breakpoint: 1024,
         settings: {
           slidesToShow: 2,
+          arrows: false,
         },
       },
       {
-        breakpoint: 640,
+        breakpoint: 768,
         settings: {
           slidesToShow: 1,
+          arrows: false,
         },
       },
     ],
@@ -60,11 +73,13 @@ const Campaigns = () => {
     <>
       <div className="container mx-auto py-8">
         <Title>Kampanyalar</Title>
-        <Slider className="-mx-2 relative" {...settings}>
+        <Slider className="-mx-2" {...settings}>
           {banners &&
-            banners.map((banner) => (
+            banners.map((banner, index) => (
               <div key={banner.id} className="block px-2">
-                <img src={banner.image} className="w-full sm:rounded-lg" />
+                <picture className="block px-2">
+                  <img src={banner.image} className="rounded-lg" />
+                </picture>
               </div>
             ))}
         </Slider>
